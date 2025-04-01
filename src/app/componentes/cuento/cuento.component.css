@@ -1,0 +1,82 @@
+/* Estilo para el contenedor de cada cuento */
+.cuento-container {
+    background-color: #FFCC80;
+    /* Fondo naranja claro */
+    border-radius: 15px;
+    /* Bordes redondeados */
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
+    margin: 10px;
+}
+
+/* Estilo para el título del cuento */
+.titulo {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Estilo para la imagen */
+.cuento-imagen {
+    width: 100px;
+    /* Tamaño de la imagen */
+    height: 100px;
+    object-fit: cover;
+    /* Ajusta la imagen dentro del contenedor */
+    border-radius: 50%;
+    /* Imagen redondeada */
+    margin-bottom: 10px;
+}
+
+/* Estilo para el nombre del autor */
+.autor {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* Contenedor de botones */
+.botones {
+    display: flex;
+    justify-content: space-around;
+    /* Acomoda los botones horizontalmente */
+}
+
+/* Estilo para los botones */
+.boton-leer,
+.boton-escuchar {
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 25px;
+    /* Botones redondeados */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Estilo específico para el botón "Leer" (color verde claro) */
+.boton-leer {
+    background-color: #A5D6A7;
+    /* Verde claro */
+}
+
+/* Estilo para el botón "Leer" cuando se pasa el mouse */
+.boton-leer:hover {
+    background-color: #81C784;
+    /* Verde más oscuro */
+}
+
+/* Estilo específico para el botón "Escuchar" (color amarillo claro) */
+.boton-escuchar {
+    background-color: #FFF59D;
+    /* Amarillo claro */
+}
+
+/* Estilo para el botón "Escuchar" cuando se pasa el mouse */
+.boton-escuchar:hover {
+    background-color: #FFEB3B;
+    /* Amarillo más oscuro */
+}

@@ -1,0 +1,3 @@
+<div class="list-container">
+    <app-cuento *ngFor="let book of books" [book]="book" [routerLink]="'/info-cuento/' + book._id"></app-cuento>
+</div>

@@ -1,0 +1,35 @@
+/* Contenedor principal para la lista de cuentos */
+.list-container {
+    display: flex;
+    flex-wrap: wrap;
+    /* Permite que los elementos se ajusten a nuevas filas cuando sea necesario */
+    justify-content: space-between;
+    /* Alinea los elementos en cada fila con espacio entre ellos */
+    gap: 20px;
+    /* Añadimos espacio entre los cuentos */
+    margin: 20px;
+    /* Margen alrededor de la lista */
+}
+
+/* Estilo de cada cuento: tamaño de cada contenedor de cuento */
+app-cuento {
+    flex: 0 1 30%;
+    /* Hacemos que cada cuento ocupe aproximadamente el 30% del contenedor */
+    box-sizing: border-box;
+    /* Evita que el contenido del cuadro se desborde */
+}
+
+/* Hacer que se ajuste a pantallas pequeñas, usando menos columnas */
+@media (max-width: 900px) {
+    app-cuento {
+        flex: 0 1 45%;
+        /* 2 cuentos por fila en pantallas más pequeñas */
+    }
+}
+
+@media (max-width: 600px) {
+    app-cuento {
+        flex: 0 1 100%;
+        /* 1 cuento por fila en pantallas aún más pequeñas */
+    }
+}

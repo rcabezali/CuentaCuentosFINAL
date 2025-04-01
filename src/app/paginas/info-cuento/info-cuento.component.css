@@ -1,0 +1,175 @@
+/* Contenedor principal */
+.info-cuento-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffcc84;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 900px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estructura principal */
+.info-cuento {
+    width: 100%;
+}
+
+/* Información del libro */
+.libro-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+/* Título del cuento */
+.titulo-cuento {
+    font-size: 28px;
+    font-weight: bold;
+    color: #4a4a4a;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Contenedor de la imagen y sinopsis alineados a la izquierda */
+.contenido {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    gap: 20px;
+}
+
+/* Imagen del libro */
+.imagen img {
+    max-width: 180px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Sinopsis alineada a la izquierda */
+.sinopsis {
+    flex: 1;
+    text-align: left;
+}
+
+.sinopsis h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.sinopsis p {
+    font-size: 16px;
+    color: #222;
+    line-height: 1.5;
+}
+
+/* Información del autor alineada a la izquierda */
+.autor-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* Alinea todo el contenido a la izquierda */
+    width: 100%;
+    padding-left: 20px;
+    /* Mantiene el alineado con la sinopsis */
+}
+
+/* Nombre del autor */
+.autor-nombre {
+    font-size: 22px;
+    font-weight: bold;
+    color: #4a4a4a;
+    margin-bottom: 10px;
+}
+
+/* Título de la sección del autor */
+.autor-info h2 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 12px;
+}
+
+/* Contenedor del autor alineado */
+.autor-contenido {
+    display: flex;
+    align-items: flex-start;
+    /* Asegura que los elementos se alineen arriba */
+    width: 100%;
+    gap: 20px;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+
+/* Foto del autor más grande */
+.autor-portada img {
+    max-width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Descripción del autor alineada a la izquierda */
+.autor-descripcion {
+    flex: 1;
+    text-align: left;
+    max-width: 400px;
+}
+
+.autor-descripcion p {
+    font-size: 16px;
+    color: #222;
+}
+
+.dificultad {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+
+/* Título de dificultad */
+.dificultad h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+/* Estrellas de dificultad */
+.estrellas {
+    display: flex;
+    font-size: 24px;
+    color: #333;
+    /* Color oscuro */
+    letter-spacing: 3px;
+    position: relative;
+}
+
+.estrellas::before {
+    content: '★★★★★';
+    color: lightgray;
+}
+
+.estrellas::after {
+    content: '★★★★★';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: calc(var(--rating) / 5 * 100%);
+    overflow: hidden;
+    color: #333;
+    /* Color oscuro */
+    white-space: nowrap;
+}

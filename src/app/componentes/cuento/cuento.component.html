@@ -1,0 +1,38 @@
+<!--<div class="cuento-card" *ngIf="book">
+
+    <div class="cuento-container">
+        <h3 class="titulo">{{ book.title }}</h3>
+
+
+        <img [src]="book.coverImage" alt="{{ book.title }}" class="cuento-imagen">
+
+
+        <p class="autor">{{ book.author }}</p>
+
+   
+        <div class="botones">
+            <a [routerLink]="['/lectura-escritura', book._id]" [queryParams]="{ mode: 'read' }">
+                <button class="boton-leer">Leer</button>
+            </a>
+            <a [routerLink]="['/lectura-escritura', book._id]" [queryParams]="{ mode: 'audio' }">
+                <button class="boton-escuchar">Escuchar</button>
+            </a>
+        </div>
+    </div>
+</div>
+-->
+
+<div class="cuento-card">
+
+    <a [routerLink]="'/info-cuento/' + book._id">
+        <div class="cuento-container">
+            <h3 class="titulo">{{ book.titulo }}</h3>
+            <img [src]="book.portada" alt="{{ book.titulo }}" class="cuento-imagen">
+            <p class="autor">{{ book.autor}}</p>
+            <div class="botones">
+                <button class="boton-leer">Leer</button>
+                <button class="boton-escuchar">Escuchar</button>
+            </div>
+        </div>
+    </a>
+</div>

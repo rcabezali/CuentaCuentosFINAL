@@ -1,0 +1,36 @@
+<div class="info-cuento-container" *ngIf="book">
+    <div class="info-cuento">
+        <div class="libro-info">
+            <h1 class="titulo-cuento">{{ book?.titulo }}</h1>
+            <div class="contenido">
+                <div class="imagen">
+                    <img [src]="book?.portada" [alt]="'Portada de ' + book?.titulo" />
+                </div>
+                <div class="sinopsis">
+                    <h2>Sinopsis:</h2>
+                    <p>{{ book?.sinopsis }}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="autor-info">
+            <h3 class="autor-nombre">{{ book?.autor }}</h3>
+            <h2>Información del autor:</h2>
+            <div class="autor-contenido">
+                <div class="autor-portada">
+                    <img [src]="book?.foto_autor" [alt]="'Foto del autor ' + book?.autor" />
+                </div>
+                <div class="autor-descripcion">
+                    <p>{{ book?.descripcion_autor }}</p>
+                </div>
+            </div>
+
+            <div class="dificultad">
+                <h3>Dificultad:</h3>
+                <div class="estrellas" [ngStyle]="{'--rating': book?.dificultad}"
+                    [attr.aria-label]="'Dificultad ' + book?.dificultad + ' de 5'">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
