@@ -30,7 +30,7 @@ export class BookService {
       "autor": "Joseph Jacobs",
       "descripcion_autor": "Cuento clásico de la tradición oral europea.",
       "foto_autor": "https://www.tebeosfera.com/T3content/img/T3_autores/_/1/jacobs_joseph_1.jpg",
-      "dificultad": "fácil"
+      "dificultad": "4"
     },
     {
       "_id": "3",
@@ -41,7 +41,7 @@ export class BookService {
       "autor": "Hans Christian Andersen",
       "descripcion_autor": "Hans Christian Andersen fue un escritor danés conocido por sus cuentos infantiles.",
       "foto_autor": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/HCA_by_Thora_Hallager_1869.jpg/1200px-HCA_by_Thora_Hallager_1869.jpg",
-      "dificultad": "medio"
+      "dificultad": "3"
     },
     {
       "_id": "4",

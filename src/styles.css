@@ -1,6 +1,8 @@
 /* styles.css - Estilos globales */
 
-/* RESET BÁSICO */
+/* ================================
+   RESET BÁSICO
+=============================== */
 * {
     margin: 0;
     padding: 0;
@@ -8,7 +10,9 @@
     text-decoration: none;
   }
   
-  /* VARIABLES GLOBALES */
+  /* ================================
+     VARIABLES GLOBALES
+  =============================== */
   :root {
     --header-bg: #289BFF;
     --header-text: #fff;
@@ -25,9 +29,12 @@
     --font-body: Arial, sans-serif;
     --border-size: 3px;
     --radius: 1rem;
+    --content-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
-  /* ESTILOS BASE */
+  /* ================================
+     ESTILOS BASE
+  =============================== */
   html {
     font-size: 20px;
     font-family: var(--font-body);
@@ -37,5 +44,233 @@
   body {
     background-color: #fefefe;
     line-height: 1.6;
+  }
+  
+  /* =======================================================
+     Estilos Globales para la Pantalla de Información del Cuento
+     (Adaptados del CSS original)
+  ======================================================= */
+  
+  /* HEADER */
+  .header {
+    background-color: var(--header-bg);
+    padding: 1rem;
+    text-align: center;
+  }
+  .header .header-title {
+    color: var(--header-text);
+    font-size: 2.2rem;
+    font-weight: bold;
+  }
+  
+  /* STORY HEADER */
+  .story-header {
+    background-color: var(--title-bg);
+    text-align: center;
+    padding: 1rem;
+  }
+  .story-title {
+    font-size: 2rem;
+    margin: 0;
+    color: var(--title-text);
+  }
+  
+  /* LAYOUT PRINCIPAL EN 3 COLUMNAS */
+  /* Alineación superior: contenido al inicio de cada columna */
+  .story-layout {
+    display: flex;
+    gap: 2%;
+    margin: 2rem auto;
+    max-width: 1200px;
+    padding: 0 1rem;
+    align-items: flex-start;
+  }
+  .story-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  /* Proporciones de las columnas */
+  .portada {
+    flex: 3;
+  }
+  .info {
+    flex: 5;
+  }
+  .acciones {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  
+  /* COL. 1: PORTADA */
+  .portada .story-image {
+    width: 100%;
+    height: auto;
+    border: 3px solid var(--card-border);
+    border-radius: var(--radius);
+    box-shadow: var(--content-box-shadow);
+  }
+  
+  /* COL. 2: INFORMACIÓN */
+  .info .story-section {
+    width: 100%;
+    padding: 1rem;
+    border-radius: var(--radius);
+    border: 2px solid var(--card-border);
+    color: var(--btn-text);
+    margin-bottom: 0;
+  }
+  
+  /* Sinopsis: fondo verde */
+  .info .story-section.sinopsis {
+    background-color: #72AB28;
+  }
+  
+  /* Autor: fondo azul */
+  .info .story-section.autor {
+    background-color: #4C70FF;
+  }
+  
+  /* Dificultad: fondo rojo */
+  .info .story-section.dificultad {
+    background-color: #FF686A;
+    text-align: center;
+  }
+  
+  /* Títulos y contenido: aumentar tamaño de fuente */
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    color: var(--btn-text);
+  }
+  .story-synopsis,
+  .author-info {
+    line-height: 1.8;
+    margin: 0;
+  }
+  
+  /* Contenedor Autor */
+  .author-container {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .author-info {
+    flex: 1;
+    text-align: justify;
+    color: #fff;
+  }
+  
+  /* Foto del Autor: Tamaño fijo y recorte obligatorio */
+  .author-image {
+    width: 180px;
+    height: 240px;
+    border: 3px solid var(--card-border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .author-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Dificultad: Estrellas */
+  .difficulty-stars {
+    font-size: 1.5rem;
+    color: #000;
+  }
+  
+  /* COL. 3: ACCIONES (BOTONES) */
+  .acciones .btn {
+    width: 80%;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: var(--border-size) solid var(--card-border);
+    border-radius: var(--radius);
+    font-family: var(--font-body);
+    font-size: 1.3rem;
+    color: var(--btn-text);
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+  }
+  .acciones .btn:hover {
+    transform: scale(1.05);
+  }
+  .btn-read {
+    background-color: var(--btn-read-bg);
+  }
+  .btn-listen {
+    background-color: var(--btn-listen-bg);
+  }
+  .action-icon {
+    max-width: 60%;
+    height: auto;
+  }
+  
+  /* ESPACIADO GLOBAL */
+  .story-layout .story-column > * {
+    margin-bottom: 1rem;
+  }
+  
+  /* (Opcional) Envoltura de imagen de portada */
+  .story-image-wrapper {
+    flex: 0 0 300px;
+    text-align: center;
+  }
+  .story-image {
+    max-width: 100%;
+    height: auto;
+    border: 3px solid var(--card-border);
+    border-radius: 0.5rem;
+  }
+  
+  /* DETALLES DEL CUENTO (si se usan) */
+  .story-details {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .story-section {
+    padding: 1rem;
+    border-radius: var(--radius);
+    color: var(--btn-text);
+  }
+  .sinopsis {
+    background-color: var(--sinopsis-bg);
+  }
+  .autor {
+    background-color: var(--autor-bg);
+  }
+  
+  /* (Opcional) Estilos para la sección de autor duplicados, eliminados para evitar conflicto */
+  
+  /* BOTONES (duplicados, se conservan los de .acciones arriba) */
+  
+  /* ACCESIBILIDAD */
+  :focus {
+    outline: 3px solid #FFBF00;
+    outline-offset: 2px;
+  }
+  .btn,
+  a.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  a.btn {
+    cursor: pointer;
   }
   

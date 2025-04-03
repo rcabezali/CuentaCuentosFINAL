@@ -1,25 +1,3 @@
-/* cuento.component.css */
-
-/* Asegúrate de tener definidas las variables globales en styles.css, por ejemplo:
-   :root {
-     --header-bg: #289BFF;
-     --header-text: #fff;
-     --intro-bg: #289BFF;
-     --intro-text: #fff;
-     --btn-more-bg: #289BFF;
-     --card-bg: #fff;
-     --card-border: #000;
-     --title-bg: #FFBF00;
-     --title-text: #333;
-     --btn-read-bg: #FA7C43;
-     --btn-listen-bg: #63A59D;
-     --btn-text: #fff;
-     --font-body: Arial, sans-serif;
-     --border-size: 3px;
-     --radius: 1rem;
-   }
-*/
-
 /* STORY CARD */
 .story-card {
     background-color: var(--card-bg);
@@ -27,7 +5,7 @@
     border-radius: var(--radius);
     display: flex;
     flex-direction: column;
-    min-height: 380px;
+    min-height: 420px; /* Ajustado para mantener consistencia en la grid */
   }
   
   /* Header de la tarjeta (área del título) */
@@ -48,8 +26,15 @@
     opacity: 0.9;
   }
   
+  /* Título con límite de dos líneas */
   .story-card__title {
     font-weight: bold;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; /* Máximo 2 líneas */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0.5rem 0;
   }
   
   /* Contenido de la tarjeta */
@@ -91,10 +76,11 @@
     margin: 0 auto;
   }
   
-  /* Imagen de la tarjeta */
+  /* Imagen de la tarjeta: forzamos un tamaño fijo y recortamos con object-fit */
   .story-card__image {
-    width: 100%;
-    height: auto;
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
     display: block;
     transition: opacity 0.2s ease-in-out;
   }
@@ -127,7 +113,6 @@
   /* Estilos para los botones (Leer / Escuchar) */
   .btn {
     width: 80%;
-    /* aspect-ratio: 1/1;  (Si deseas forzar forma cuadrada, Angular soporta esta propiedad) */
     display: flex;
     align-items: center;
     justify-content: center;

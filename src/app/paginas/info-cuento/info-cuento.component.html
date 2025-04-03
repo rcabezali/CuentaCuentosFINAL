@@ -36,9 +36,8 @@
       <!-- Dificultad -->
       <div class="story-section dificultad" role="region" [attr.aria-labelledby]="'dificultad-title'">
         <h2 class="section-title" id="dificultad-title">Dificultad</h2>
-        <div class="difficulty-stars" [ngStyle]="{'--rating': book?.dificultad}" [attr.aria-label]="'Dificultad de ' + book?.dificultad + ' de 5'">
-          <!-- Aquí puedes representar las estrellas -->
-        </div>
+        <div class="difficulty-stars" [attr.aria-label]="'Dificultad: ' + book?.dificultad + ' de 5'" [innerHTML]="book?.dificultad | difficultyStars">
+        </div>          
       </div>
     </div>
   

@@ -1,14 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { BookService } from '../../servicios/book-service.service';
 import { Book } from '../../models/book.model';
 import { CommonModule } from '@angular/common';
+import { DifficultyStarsPipe } from '../../difficulty-stars.pipe';
 
 @Component({
   selector: 'app-info-cuento',
   templateUrl: './info-cuento.component.html',
   styleUrls: ['./info-cuento.component.css'],
-  imports: [CommonModule, RouterModule]
+  imports: [CommonModule, RouterModule, DifficultyStarsPipe],
+  encapsulation: ViewEncapsulation.None
 })
 export class InfoCuentoComponent implements OnInit {
   book: Book | any = null;

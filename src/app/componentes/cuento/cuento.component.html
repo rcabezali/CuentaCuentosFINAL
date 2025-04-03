@@ -7,10 +7,10 @@
     <div class="story-card__content">
       <div class="story-card__actions">
         <a [routerLink]="['/lectura-escritura', book._id]" [queryParams]="{ action: 'leer' }" class="btn btn--read" role="button" [attr.aria-label]="'Leer ' + book.titulo">
-          <img src="" alt="Leer {{ book.titulo }}">
+          <img src="assets/Book.png" alt="Leer {{ book.titulo }}">
         </a>
         <a [routerLink]="['/lectura-escritura', book._id]" [queryParams]="{ action: 'escuchar' }" class="btn btn--listen" role="button" [attr.aria-label]="'Escuchar ' + book.titulo">
-          <img src="" alt="Escuchar {{ book.titulo }}">
+          <img src="assets/Speaker.png" alt="Escuchar {{ book.titulo }}">
         </a>
       </div>
       <div class="story-card__poster-wrapper">
