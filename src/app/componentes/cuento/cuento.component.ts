@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 
@@ -23,4 +23,10 @@ export class CuentoComponent {
     foto_autor: string;
     dificultad: string;
   };
+
+  constructor(private router: Router) { }
+
+  irAlLector() {
+    this.router.navigate(['/lectura-escritura']);
+  }
 }

@@ -1,1 +1,18 @@
-<p>lectura-escritura works!</p>
+<div class="lector">
+    <h2>Lectura: {{ bookId }}</h2>
+
+    <!-- Mostrar la línea actual -->
+    <div class="linea">
+        <p *ngIf="lineas.length > 0; else loading">
+            {{ lineas[indice] }}
+        </p>
+        <!-- Mensaje mientras se carga -->
+        <ng-template #loading>
+            <p>Cargando el texto del libro...</p>
+        </ng-template>
+    </div>
+
+    <!-- Botones para navegar entre las líneas -->
+    <button (click)="anterior()" [disabled]="indice === 0">Anterior</button>
+    <button (click)="siguiente()" [disabled]="indice === lineas.length - 1">Siguiente</button>
+</div>
