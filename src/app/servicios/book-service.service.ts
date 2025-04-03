@@ -19,7 +19,7 @@ export class BookService {
       "autor": "Charles Perrault",
       "descripcion_autor": "Charles Perrault fue un escritor francés del siglo XVII, conocido por sus cuentos de hadas.",
       "foto_autor": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Portrait_de_Charles_Perrault_par_Charles_Le_Brun_%28d%C3%A9tail%29.jpg",
-      "dificultad": "fácil"
+      "dificultad": "1"
     },
     {
       "_id": "2",

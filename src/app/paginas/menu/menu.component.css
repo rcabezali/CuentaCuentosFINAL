@@ -1,0 +1,14 @@
+/* menu.component.css */
+header {
+    text-align: center;
+    margin: 1rem 0;
+  }
+  
+  h1 {
+    font-size: 2.2rem;
+    color: var(--header-text);
+    background-color: var(--header-bg);
+    padding: 1rem;
+    border-radius: var(--radius);
+  }
+  

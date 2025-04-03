@@ -1,175 +1,167 @@
-/* Contenedor principal */
-.info-cuento-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #ffcc84;
-    padding: 20px;
-    border-radius: 10px;
-    width: 100%;
-    max-width: 900px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
+/* info-cuento.component.css */
 
-/* Estructura principal */
-.info-cuento {
-    width: 100%;
-}
-
-/* Información del libro */
-.libro-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-    width: 100%;
-}
-
-/* Título del cuento */
-.titulo-cuento {
-    font-size: 28px;
-    font-weight: bold;
-    color: #4a4a4a;
-    margin-bottom: 15px;
+:host {
+    display: block;
+    /* Los estilos globales (reset, variables, etc.) se definen en styles.css */
+  }
+  
+  /* Header Global */
+  .header {
+    background-color: var(--header-bg);
+    padding: 1rem;
     text-align: center;
-}
-
-/* Contenedor de la imagen y sinopsis alineados a la izquierda */
-.contenido {
+  }
+  
+  .header .header-title {
+    color: var(--header-text);
+    font-size: 2.2rem;
+    font-weight: bold;
+  }
+  
+  /* Story Header (título principal del cuento) */
+  .story-header {
+    background-color: var(--title-bg);
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  .story-title {
+    font-size: 2rem;
+    margin: 0;
+    color: var(--header-text); /* Puedes ajustar a var(--title-text) si lo prefieres */
+  }
+  
+  /* Layout Principal en tres columnas */
+  .story-layout {
     display: flex;
-    align-items: flex-start;
-    width: 100%;
-    gap: 20px;
-}
-
-/* Imagen del libro */
-.imagen img {
-    max-width: 180px;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
-}
-
-/* Sinopsis alineada a la izquierda */
-.sinopsis {
+    gap: 2%;
+    margin: 2rem auto;
+    max-width: 1200px;
+    padding: 0 1rem;
+  }
+  
+  /* Columnas del layout */
+  .story-column {
     flex: 1;
-    text-align: left;
-}
-
-.sinopsis h2 {
-    font-size: 20px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 8px;
-}
-
-.sinopsis p {
-    font-size: 16px;
-    color: #222;
-    line-height: 1.5;
-}
-
-/* Información del autor alineada a la izquierda */
-.autor-info {
+  }
+  
+  /* Columna Portada */
+  .portada {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    /* Alinea todo el contenido a la izquierda */
-    width: 100%;
-    padding-left: 20px;
-    /* Mantiene el alineado con la sinopsis */
-}
-
-/* Nombre del autor */
-.autor-nombre {
-    font-size: 22px;
-    font-weight: bold;
-    color: #4a4a4a;
-    margin-bottom: 10px;
-}
-
-/* Título de la sección del autor */
-.autor-info h2 {
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 12px;
-}
-
-/* Contenedor del autor alineado */
-.autor-contenido {
-    display: flex;
-    align-items: flex-start;
-    /* Asegura que los elementos se alineen arriba */
-    width: 100%;
-    gap: 20px;
-    justify-content: flex-start;
-    margin-bottom: 20px;
-}
-
-/* Foto del autor más grande */
-.autor-portada img {
-    max-width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
-}
-
-/* Descripción del autor alineada a la izquierda */
-.autor-descripcion {
-    flex: 1;
-    text-align: left;
-    max-width: 400px;
-}
-
-.autor-descripcion p {
-    font-size: 16px;
-    color: #222;
-}
-
-.dificultad {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
     justify-content: center;
-    width: 100%;
-    margin-top: 20px;
-}
-
-
-/* Título de dificultad */
-.dificultad h3 {
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 5px;
-}
-
-/* Estrellas de dificultad */
-.estrellas {
+    align-items: center;
+  }
+  
+  .story-image {
+    max-width: 100%;
+    height: auto;
+    border: var(--border-size) solid var(--card-border);
+    border-radius: var(--radius);
+  }
+  
+  /* Columna Información */
+  .info {
     display: flex;
-    font-size: 24px;
-    color: #333;
-    /* Color oscuro */
-    letter-spacing: 3px;
-    position: relative;
-}
-
-.estrellas::before {
-    content: '★★★★★';
-    color: lightgray;
-}
-
-.estrellas::after {
-    content: '★★★★★';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: calc(var(--rating) / 5 * 100%);
-    overflow: hidden;
-    color: #333;
-    /* Color oscuro */
-    white-space: nowrap;
-}
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  /* Secciones (Sinopsis, Autor, Dificultad) */
+  .story-section {
+    background-color: var(--card-bg);
+    border: var(--border-size) solid var(--card-border);
+    border-radius: var(--radius);
+    padding: 1rem;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+  
+  .story-synopsis {
+    font-size: 1.3rem;
+    line-height: 1.6;
+  }
+  
+  /* Sección Autor */
+  .autor {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .author-container {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  .author-info {
+    flex: 1;
+    font-size: 1.3rem;
+  }
+  
+  .author-image {
+    flex: 0 0 180px;
+  }
+  
+  .author-image img {
+    width: 100%;
+    height: auto;
+    border: var(--border-size) solid var(--card-border);
+    border-radius: var(--radius);
+  }
+  
+  /* Sección Dificultad */
+  .dificultad {
+    text-align: center;
+  }
+  
+  .difficulty-stars {
+    font-size: 1.5rem;
+    color: var(--btn-text);
+  }
+  
+  /* Columna Acciones (botones para Leer y Escuchar) */
+  .acciones {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .btn {
+    width: 80%;
+    /* Si se desea forzar forma cuadrada, se puede usar aspect-ratio */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: var(--border-size) solid var(--card-border);
+    border-radius: var(--radius);
+    font-family: var(--font-body);
+    font-size: 1.3rem;
+    color: var(--btn-text);
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+  }
+  
+  .btn:hover {
+    opacity: 0.9;
+  }
+  
+  .btn-read {
+    background-color: var(--btn-read-bg);
+  }
+  
+  .btn-listen {
+    background-color: var(--btn-listen-bg);
+  }
+  
+  .action-icon {
+    max-width: 60%;
+    height: auto;
+  }
+  

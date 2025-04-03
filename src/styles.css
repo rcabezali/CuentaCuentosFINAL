@@ -1,1 +1,41 @@
-/* You can add global styles to this file, and also import other style files */
+/* styles.css - Estilos globales */
+
+/* RESET BÁSICO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+  }
+  
+  /* VARIABLES GLOBALES */
+  :root {
+    --header-bg: #289BFF;
+    --header-text: #fff;
+    --intro-bg: #289BFF;
+    --intro-text: #fff;
+    --btn-more-bg: #289BFF;
+    --card-bg: #fff;
+    --card-border: #000;
+    --title-bg: #FFBF00;
+    --title-text: #333;
+    --btn-read-bg: #FA7C43;
+    --btn-listen-bg: #63A59D;
+    --btn-text: #fff;
+    --font-body: Arial, sans-serif;
+    --border-size: 3px;
+    --radius: 1rem;
+  }
+  
+  /* ESTILOS BASE */
+  html {
+    font-size: 20px;
+    font-family: var(--font-body);
+    color: var(--title-text);
+  }
+  
+  body {
+    background-color: #fefefe;
+    line-height: 1.6;
+  }
+  

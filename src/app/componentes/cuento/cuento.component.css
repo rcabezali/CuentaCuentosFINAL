@@ -1,82 +1,155 @@
-/* Estilo para el contenedor de cada cuento */
-.cuento-container {
-    background-color: #FFCC80;
-    /* Fondo naranja claro */
-    border-radius: 15px;
-    /* Bordes redondeados */
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* Sombra suave */
-    margin: 10px;
-}
+/* cuento.component.css */
 
-/* Estilo para el título del cuento */
-.titulo {
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
-}
+/* Asegúrate de tener definidas las variables globales en styles.css, por ejemplo:
+   :root {
+     --header-bg: #289BFF;
+     --header-text: #fff;
+     --intro-bg: #289BFF;
+     --intro-text: #fff;
+     --btn-more-bg: #289BFF;
+     --card-bg: #fff;
+     --card-border: #000;
+     --title-bg: #FFBF00;
+     --title-text: #333;
+     --btn-read-bg: #FA7C43;
+     --btn-listen-bg: #63A59D;
+     --btn-text: #fff;
+     --font-body: Arial, sans-serif;
+     --border-size: 3px;
+     --radius: 1rem;
+   }
+*/
 
-/* Estilo para la imagen */
-.cuento-imagen {
-    width: 100px;
-    /* Tamaño de la imagen */
-    height: 100px;
-    object-fit: cover;
-    /* Ajusta la imagen dentro del contenedor */
-    border-radius: 50%;
-    /* Imagen redondeada */
-    margin-bottom: 10px;
-}
-
-/* Estilo para el nombre del autor */
-.autor {
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 15px;
-}
-
-/* Contenedor de botones */
-.botones {
+/* STORY CARD */
+.story-card {
+    background-color: var(--card-bg);
+    border: var(--border-size) solid var(--card-border);
+    border-radius: var(--radius);
     display: flex;
-    justify-content: space-around;
-    /* Acomoda los botones horizontalmente */
-}
-
-/* Estilo para los botones */
-.boton-leer,
-.boton-escuchar {
-    padding: 10px 20px;
-    font-size: 14px;
-    border-radius: 25px;
-    /* Botones redondeados */
+    flex-direction: column;
+    min-height: 380px;
+  }
+  
+  /* Header de la tarjeta (área del título) */
+  .story-card__header {
+    background-color: var(--title-bg);
+    color: var(--title-text);
+    font-family: var(--font-body);
+    font-size: 1.8rem;
+    text-align: center;
+    padding: 0.75rem 1rem;
+    border-top-left-radius: var(--radius);
+    border-top-right-radius: var(--radius);
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.2s ease-in-out;
+  }
+  
+  .story-card__header:hover {
+    opacity: 0.9;
+  }
+  
+  .story-card__title {
+    font-weight: bold;
+  }
+  
+  /* Contenido de la tarjeta */
+  .story-card__content {
+    flex: 1;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    padding: 1rem;
+    gap: 1rem;
+  }
+  
+  /* Sección de acciones: botones Leer y Escuchar */
+  .story-card__actions {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  /* Contenedor del póster y enlace “Saber más...” */
+  .story-card__poster-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Bloque unificado de póster */
+  .story-card__poster {
+    border: var(--border-size) solid var(--card-border);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    width: 140px;
+    margin: 0 auto;
+  }
+  
+  /* Imagen de la tarjeta */
+  .story-card__image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: opacity 0.2s ease-in-out;
+  }
+  
+  .story-card__image:hover {
+    opacity: 0.9;
+  }
+  
+  /* Enlace “Saber más...” */
+  .story-card__more {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    padding: 0.7rem 0;
+    background-color: var(--btn-more-bg);
+    color: var(--btn-text);
     border: none;
+    font-family: var(--font-body);
+    font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-/* Estilo específico para el botón "Leer" (color verde claro) */
-.boton-leer {
-    background-color: #A5D6A7;
-    /* Verde claro */
-}
-
-/* Estilo para el botón "Leer" cuando se pasa el mouse */
-.boton-leer:hover {
-    background-color: #81C784;
-    /* Verde más oscuro */
-}
-
-/* Estilo específico para el botón "Escuchar" (color amarillo claro) */
-.boton-escuchar {
-    background-color: #FFF59D;
-    /* Amarillo claro */
-}
-
-/* Estilo para el botón "Escuchar" cuando se pasa el mouse */
-.boton-escuchar:hover {
-    background-color: #FFEB3B;
-    /* Amarillo más oscuro */
-}
+    transition: 0.2s ease-in-out;
+    font-weight: bold;
+  }
+  
+  .story-card__more:hover {
+    opacity: 0.9;
+  }
+  
+  /* Estilos para los botones (Leer / Escuchar) */
+  .btn {
+    width: 80%;
+    /* aspect-ratio: 1/1;  (Si deseas forzar forma cuadrada, Angular soporta esta propiedad) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: var(--border-size) solid var(--card-border);
+    border-radius: 0.5rem;
+    font-family: var(--font-body);
+    font-size: 1.3rem;
+    text-align: center;
+    color: var(--btn-text);
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+  }
+  
+  .btn:hover {
+    opacity: 0.9;
+  }
+  
+  .btn--read {
+    background-color: var(--btn-read-bg);
+  }
+  
+  .btn--listen {
+    background-color: var(--btn-listen-bg);
+  }
+  
