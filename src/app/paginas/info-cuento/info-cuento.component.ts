@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { BookService } from '../../servicios/book-service.service';
 import { Book } from '../../models/book.model';
 import { CommonModule } from '@angular/common';
@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
   selector: 'app-info-cuento',
   templateUrl: './info-cuento.component.html',
   styleUrls: ['./info-cuento.component.css'],
-  imports: [CommonModule]
+  imports: [CommonModule, RouterModule]
 })
 export class InfoCuentoComponent implements OnInit {
   book: Book | any = null;

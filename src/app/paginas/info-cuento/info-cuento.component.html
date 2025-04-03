@@ -1,36 +1,55 @@
-<div class="info-cuento-container" *ngIf="book">
-    <div class="info-cuento">
-        <div class="libro-info">
-            <h1 class="titulo-cuento">{{ book?.titulo }}</h1>
-            <div class="contenido">
-                <div class="imagen">
-                    <img [src]="book?.portada" [alt]="'Portada de ' + book?.titulo" />
-                </div>
-                <div class="sinopsis">
-                    <h2>Sinopsis:</h2>
-                    <p>{{ book?.sinopsis }}</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="autor-info">
-            <h3 class="autor-nombre">{{ book?.autor }}</h3>
-            <h2>Información del autor:</h2>
-            <div class="autor-contenido">
-                <div class="autor-portada">
-                    <img [src]="book?.foto_autor" [alt]="'Foto del autor ' + book?.autor" />
-                </div>
-                <div class="autor-descripcion">
-                    <p>{{ book?.descripcion_autor }}</p>
-                </div>
-            </div>
-
-            <div class="dificultad">
-                <h3>Dificultad:</h3>
-                <div class="estrellas" [ngStyle]="{'--rating': book?.dificultad}"
-                    [attr.aria-label]="'Dificultad ' + book?.dificultad + ' de 5'">
-                </div>
-            </div>
-        </div>
+<header class="header" role="banner">
+    <a [routerLink]="['/']" class="header-title">Cuentacuentos</a>
+  </header>
+  
+  <div class="story-header">
+    <h1 class="story-title">{{ book?.titulo }}</h1>
+  </div>
+  
+  <section class="story-layout" aria-label="Información del cuento">
+    <!-- Columna 1: Portada -->
+    <div class="story-column portada">
+      <img [src]="book?.portada" alt="Portada de {{ book?.titulo }}" class="story-image">
     </div>
-</div>
+  
+    <!-- Columna 2: Información -->
+    <div class="story-column info">
+      <!-- Sinopsis -->
+      <div class="story-section sinopsis" role="region" [attr.aria-labelledby]="'sinopsis-title'">
+        <h2 class="section-title" id="sinopsis-title">Sinopsis</h2>
+        <p class="story-synopsis">{{ book?.sinopsis }}</p>
+      </div>
+  
+      <!-- Autor -->
+      <div class="story-section autor" role="region" [attr.aria-labelledby]="'autor-title'">
+        <h2 class="section-title" id="autor-title">Autor</h2>
+        <div class="author-container">
+          <div class="author-info">
+            <p>{{ book?.descripcion_autor }}</p>
+          </div>
+          <div class="author-image">
+            <img [src]="book?.foto_autor" alt="Retrato de {{ book?.autor }}">
+          </div>
+        </div>
+      </div>
+  
+      <!-- Dificultad -->
+      <div class="story-section dificultad" role="region" [attr.aria-labelledby]="'dificultad-title'">
+        <h2 class="section-title" id="dificultad-title">Dificultad</h2>
+        <div class="difficulty-stars" [ngStyle]="{'--rating': book?.dificultad}" [attr.aria-label]="'Dificultad de ' + book?.dificultad + ' de 5'">
+          <!-- Aquí puedes representar las estrellas -->
+        </div>
+      </div>
+    </div>
+  
+    <!-- Columna 3: Acciones -->
+    <div class="story-column acciones">
+      <a [routerLink]="['/lectura-escritura', book?._id]" [queryParams]="{ action: 'leer' }" class="btn btn-read" role="button" [attr.aria-label]="'Leer ' + book?.titulo">
+        <img src="assets/Book.png" alt="Leer {{ book?.titulo }}" class="action-icon">
+      </a>
+      <a [routerLink]="['/lectura-escritura', book?._id]" [queryParams]="{ action: 'escuchar' }" class="btn btn-listen" role="button" [attr.aria-label]="'Escuchar ' + book?.titulo">
+        <img src="assets/Speaker.png" alt="Escuchar {{ book?.titulo }}" class="action-icon">
+      </a>
+    </div>
+  </section>
+  
