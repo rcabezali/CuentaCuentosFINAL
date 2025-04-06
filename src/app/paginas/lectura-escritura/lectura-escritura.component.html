@@ -1,18 +1,65 @@
-<div class="lector">
-    <h2>Lectura: {{ bookId }}</h2>
-
-    <!-- Mostrar la línea actual -->
-    <div class="linea">
-        <p *ngIf="lineas.length > 0; else loading">
-            {{ lineas[indice] }}
-        </p>
-        <!-- Mensaje mientras se carga -->
-        <ng-template #loading>
-            <p>Cargando el texto del libro...</p>
-        </ng-template>
+<header class="header" role="banner">
+    <a routerLink="/" class="header-title">CuentaCuentos</a>
+  </header>
+  
+  <!-- Barra de acción -->
+  <div class="action-bar" [ngClass]="{'action-bar--escuchar': modoHablado, 'action-bar--leer': !modoHablado}">
+    <!-- Indicador de modo -->
+    <div class="mode-indicator">
+      <img id="mode-icon" [src]="modoHablado ? 'assets/Speaker.png' : 'assets/Book.png'" 
+           [alt]="modoHablado ? 'Modo Escuchando' : 'Modo Leyendo'">
+      <span id="mode-text">{{ modoHablado ? 'Escuchando...' : 'Leyendo...' }}</span>
     </div>
-
-    <!-- Botones para navegar entre las líneas -->
-    <button (click)="anterior()" [disabled]="indice === 0">Anterior</button>
-    <button (click)="siguiente()" [disabled]="indice === lineas.length - 1">Siguiente</button>
-</div>
+    <!-- Título del cuento como botón -->
+    <a [routerLink]="['/info-cuento', bookId]" class="story-title">
+        {{ tituloCuento }}
+      </a>
+    <!-- Botón para cambiar de modo -->
+    <button class="toggle-mode" (click)="toggleMode()" aria-label="Cambiar modo">
+      <img id="toggle-icon" [src]="modoHablado ? 'assets/Book.png' : 'assets/Speaker.png'" 
+           [alt]="modoHablado ? 'Cambiar a leer' : 'Cambiar a escuchar'">
+    </button>
+  </div>
+  
+  <!-- Controles de ajuste de fuente -->
+  
+  <!-- 
+  <div class="font-size-control">
+    <label for="font-size-slider">Tamaño de fuente:</label>
+    <input type="range" id="font-size-slider" min="1" max="3" step="0.1" />
+  </div>
+  -->
+  
+  
+  <!-- Contenido principal -->
+  <main>
+    <div id="story-content" class="story-content">
+      <p *ngIf="lineas && lineas.length > 0; else loading">
+        {{ lineas[indice] }}
+      </p>
+      <ng-template #loading>
+        <p>Cargando el cuento...</p>
+      </ng-template>
+    </div>
+  </main>
+  
+  <!-- Botones de navegación (solo en modo lectura) -->
+  <div class="navigation-buttons" *ngIf="!modoHablado">
+    <button class="nav-button" (click)="anterior()" [disabled]="indice === 0" aria-label="Página anterior">
+      <img src="assets/prev-arrow.png" alt="Anterior">
+    </button>
+    <button class="nav-button" (click)="siguiente()" [disabled]="indice === lineas.length - 1" aria-label="Página siguiente">
+      <img src="assets/next-arrow.png" alt="Siguiente">
+    </button>
+  </div>
+  
+  <!-- Controles de audio (solo en modo escuchar) -->
+<div class="audio-controls" *ngIf="modoHablado">
+    <button class="control-button" (click)="pausarLectura()" 
+            [attr.aria-label]="isPaused ? 'Reanudar' : 'Pausar'">
+      <img [src]="isPaused ? 'assets/play-icon.png' : 'assets/pause-icon.png'" 
+           [alt]="isPaused ? 'Reanudar' : 'Pausar'">
+    </button>
+  </div>
+  
+  

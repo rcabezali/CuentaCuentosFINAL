@@ -1,5 +1,3 @@
-/* styles.css - Estilos globales */
-
 /* ================================
    RESET BÁSICO
 =============================== */
@@ -26,7 +24,7 @@
     --btn-read-bg: #FA7C43;
     --btn-listen-bg: #63A59D;
     --btn-text: #fff;
-    --font-body: Arial, sans-serif;
+    --font-body: 'Manrope', Arial, sans-serif;
     --border-size: 3px;
     --radius: 1rem;
     --content-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -48,7 +46,6 @@
   
   /* =======================================================
      Estilos Globales para la Pantalla de Información del Cuento
-     (Adaptados del CSS original)
   ======================================================= */
   
   /* HEADER */
@@ -74,9 +71,7 @@
     margin: 0;
     color: var(--title-text);
   }
-  
-  /* LAYOUT PRINCIPAL EN 3 COLUMNAS */
-  /* Alineación superior: contenido al inicio de cada columna */
+
   .story-layout {
     display: flex;
     gap: 2%;
@@ -93,7 +88,6 @@
     gap: 1rem;
   }
   
-  /* Proporciones de las columnas */
   .portada {
     flex: 3;
   }
@@ -166,7 +160,6 @@
   }
   .author-info {
     flex: 1;
-    text-align: justify;
     color: #fff;
   }
   
@@ -224,7 +217,7 @@
     margin-bottom: 1rem;
   }
   
-  /* (Opcional) Envoltura de imagen de portada */
+  /* Envoltura de imagen de portada */
   .story-image-wrapper {
     flex: 0 0 300px;
     text-align: center;
@@ -236,7 +229,7 @@
     border-radius: 0.5rem;
   }
   
-  /* DETALLES DEL CUENTO (si se usan) */
+  /* DETALLES DEL CUENTO */
   .story-details {
     flex: 1 1 auto;
     display: flex;
@@ -254,11 +247,7 @@
   .autor {
     background-color: var(--autor-bg);
   }
-  
-  /* (Opcional) Estilos para la sección de autor duplicados, eliminados para evitar conflicto */
-  
-  /* BOTONES (duplicados, se conservan los de .acciones arriba) */
-  
+
   /* ACCESIBILIDAD */
   :focus {
     outline: 3px solid #FFBF00;

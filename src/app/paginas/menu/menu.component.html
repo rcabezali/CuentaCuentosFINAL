@@ -1,7 +1,16 @@
-<header>
-    <h1>Menú Principal</h1>
-</header>
+<header class="header" role="banner">
+    <a [routerLink]="['/']" class="header-title">CuentaCuentos</a>
+  </header>
+  
 
-<section class="library" aria-label="Biblioteca de Cuentos">
-    <app-lista-cuentos></app-lista-cuentos>
-</section>
+  <main role="main">
+    <!-- Sección Intro -->
+    <section class="intro" role="region" aria-labelledby="intro-title">
+      <h2 id="intro-title">¿Qué quieres leer hoy?</h2>
+    </section>
+  
+    <!-- Biblioteca -->
+    <section class="library" aria-label="Biblioteca de Cuentos">
+      <app-lista-cuentos></app-lista-cuentos>
+    </section>
+  </main>

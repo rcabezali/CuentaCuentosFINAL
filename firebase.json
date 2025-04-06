@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "dist/cuenta-cuentos/browser",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
